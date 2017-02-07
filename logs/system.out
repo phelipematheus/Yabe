@@ -1,0 +1,6 @@
+Listening for transport dt_socket at address: 8000
+11:29:07,385 INFO  ~ Starting /Volumes/Data/workspace/yabe
+:: loading settings :: url = jar:file:/Volumes/Data/Java/play-1.4.2/framework/lib/ivy-2.4.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+11:29:13,165 WARN  ~ You're running Play! in DEV mode
+11:29:13,223 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
+~ Server is up and running

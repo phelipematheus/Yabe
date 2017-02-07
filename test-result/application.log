@@ -1,0 +1,6 @@
+06 fev 2017 14:27:18,028 INFO  ~ Starting /Volumes/Data/workspace/yabe
+06 fev 2017 14:27:23,300 INFO  ~ Module crud is available (/Volumes/Data/Java/play-1.4.2/modules/crud)
+06 fev 2017 14:27:23,839 WARN  ~ You're running Play! in DEV mode
+06 fev 2017 14:27:23,909 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
+06 fev 2017 14:27:44,976 INFO  ~ Connected to jdbc:h2:mem:play;MODE=MYSQL;LOCK_MODE=0 for default
+06 fev 2017 14:27:45,809 INFO  ~ Application 'Yet Another Blog Engine' is now started !
