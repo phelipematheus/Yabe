@@ -1,42 +1,46 @@
 #{extends 'admin.html' /}
  
 #{ifnot post?.id}
-    <h3>Escrever, <span>um novo post</span></h3>
+    <h3>Write, <span>a new post</span></h3>
 #{/ifnot}
 #{else}
-    <h3>Editar, <span>esse post</span></h3>
+    <h3>Ediit, <span>this post</span></h3>
 #{/else}
  
 #{form @save(post?.id)}
  
     #{ifErrors}
         <p class="error">
-            Por favor, corrija esse erro.
+            Please, correct this error.
         </p>
     #{/ifErrors}
      
     <p>
         #{field 'title'}
-        <label>Título do post:</label>
+        <label>Post title:</label>
         <input type="text" name="${field.name}" 
             value="${post?.title}" />
-        <span class="error">#{error 'post.title' /}</span>
+        #{ifError 'post.title'}
+        	<span class="error">#{error 'post.title' /}</span>
+        #{/ifError}
         #{/field}
     </p>
  
     <p>
         #{field 'content'}
-        <label>Escreva aqui:</label>
+        <label>Write here:</label>
         <textarea name="${field.name}">${post?.content}</textarea>
-        <span class="error">#{error 'post.content' /}</span>
+        #{ifError 'post.content'}
+        	<span class="error">#{error 'post.content' /}</span>
+        #{/ifError}
         #{/field}
     </p>
  
     <p>
         #{field 'tags'}
-        <label>Entre com tags:</label>
+        <label>Enter with tags:</label>
         <input type="text" size="50" 
-            name="${field.name}" value="${post?.tags?.join(' ')}" />
+            name="${field.name}" value="${post?.tags?.sort()?.join(' ')}" />
         #{/field}
     </p>
     

@@ -1,17 +1,24 @@
 /** Main layout **/
 
 html, body {
-    background: #219a42!important;
+    background: #96b171!important;
     font-family: Helvetica, Arial, Sans !important;
 }
 
-body {
-    width: 900px;
-    padding: 0 30px;
-    margin: auto;
+/** Blog header **/ 
+
+.lang{
+	float:right;
+	width:200px;
+	background: white;
+	padding: 3px;
+	border-radius: 50px;
 }
 
-/** Blog header **/ 
+.img-lang{
+	width: 27px;
+	height: 27px;
+}
 
 #header {
     padding: 10px 0;
@@ -30,7 +37,7 @@ body {
 }
 
 #logo span {
-    color: #f00;
+    color: #e06b6a;
     font-size: 70%;
 }
 
@@ -95,7 +102,7 @@ body {
 
 #main {
     background: #b7c663;
-    background: -webkit-gradient(linear, left top, left 30%, from(#314660), to(#364B66));
+    background: -webkit-gradient(linear, left top, left 30%, from(#314660), to(#af4848));
     -webkit-border-radius: 16px;
     -moz-border-radius: 16px;
     padding: 20px;
@@ -197,7 +204,7 @@ body {
 }
 
 h3 {
-    color: #869AB1;
+    color: #fefffe;
     font-size: 18px;
     margin-bottom: 15px;
 }
@@ -354,12 +361,12 @@ form label {
     font-size: 70%;
     padding: 10px 30px;
     text-align: center;
-    color: #869AB1;
+    color: #000000;
     margin-top: 30px;
 }
 
 #footer a {
-    color: #869AB1;
+    color: #000000;
     font-weight: bold;
 }
 
@@ -381,10 +388,10 @@ form label {
 }
 
 #adminMenu li a {
-    color: #354a67;
+    color: #fcfeff; /* cor da letra do menu do Admin*/ 
     text-decoration: none;
     font-size: 80%;
-    background: #591C64;
+    background: #9c6d4d; /* cor de fundo do menu do Admin*/ 
     padding: 2px 10px;
     -webkit-border-radius: 9px;
     -moz-border-radius: 9px;
@@ -395,11 +402,11 @@ form label {
 }
 
 #crudContent {
-    color: #8B98AD;
+    color: #e6e0e5;
 }
 
 #crudContent h2 {
-    color: #EDC3CD !important;
+    color: #e8ecef!important;
 }
 
 #crudContent thead tr {
@@ -434,7 +441,7 @@ tr.odd {
 }
 
 .crudField label {
-    color: #B8FA5C;
+    color: #fefffe;
 }
 
 .crudHelp {
@@ -442,7 +449,7 @@ tr.odd {
 }
 
 .crudField .tag {
-    color: #111;
+    color: #fefffe;
     font-size: 80%;
 }
 

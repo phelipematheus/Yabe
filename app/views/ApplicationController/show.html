@@ -4,14 +4,14 @@
 <ul id="pagination">
     #{if post.previous()}
         <li id="previous">
-            <a href="@{Application.show(post.previous().id)}">
+            <a href="@{ApplicationController.show(post.previous().id)}">
                 ${post.previous().title}
             </a>
         </li>
     #{/if}
     #{if post.next()}
         <li id="next">
-            <a href="@{Application.show(post.next().id)}">
+            <a href="@{ApplicationController.show(post.next().id)}">
                 ${post.next().title}
             </a>
         </li>
@@ -26,7 +26,7 @@
 
 <h3>Post a comment</h3>
 
-#{form @Application.postComment(post.id)}
+#{form @ApplicationController.postComment(post.id)}
 	
 	#{ifErrors}
 		<p class="error">
@@ -44,7 +44,7 @@
 	</p>
 	<p>
 		<label for="code">Please type a code below: </label>
-		<img src="@{Application.captcha(randomID)}"/>
+		<img src="@{ApplicationController.captcha(randomID)}"/>
 		<br />
 		<input type="text" name="code" id="code" size="18" value=""/>
 		<input type="hidden" name="randomID" value="${randomID}"/>

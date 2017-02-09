@@ -6,35 +6,37 @@
 	 
 	<div class="objectForm">
 		#{form action:@save(object.id), enctype:'multipart/form-data'}
-		    #{crud.form}
+		   <div class="flex-container">
+		    #{crud.form fields:['title','content','author','tags']}		
 		    	#{crud.custom 'tags'}
-		    		<label for="tags">
-		    			&{'tags'}
-		    		</label>
-		    		
-		    		<script type="text/javascript">
-		    			var toggle = function(tagEl){
-		    				var input = document.getElementById('h'+tagEl.id);
-		    				if(tagEl.className.indexOf('selected') > -1){
-		    					tegEl.className = 'tag';
-		    					input.value = '';
-		    				} else {
-		    					tagEl.className = 'tag selected'
-		    					input.value = tagEl.id;
-		    				}
-		    			}
-		    		</script>
-		    		
-		    		<div class="tag-list">
-		    			#{list items:models.TagBO.findAll(), as:'tag'}
-		    			<span id="${tag.id}" onclick="toggle(this)" class="tag ${object.tags.contains(tag) ? 'selected' : ''}">
-		    				${tag}
-		    			</span> 
-		    			<input id="h${tag.id}" type="hidden" name="${fieldName}" value="${object.tags.contains(tag) ? tag.id : ''}"/>
-		    			#{/list}
-		    		</div>
-		    	#{/crud.custom}
+			        <label for="tags">
+			            &{'tags'}
+			        </label>
+			       	    <script type="text/javascript">
+				        var toggle = function(tagEl) {
+				            var input = document.getElementById('h'+tagEl.id);
+				            if(tagEl.className.indexOf('selected') > -1) {
+				                tagEl.className = 'tag';
+				                input.value = '';
+				            } else {
+				                tagEl.className = 'tag selected';
+				                input.value = tagEl.id;
+				            }
+				        }
+				    </script>
+				    <div class="tags-list">
+				        #{list items:models.TagBO.findAll(), as:'tag'}
+				           <span id="${tag.id}" onclick="toggle(this)" 
+				                class="tag ${object.tags.contains(tag) ? 'selected' : ''}">
+				               ${tag}
+				           </span> 
+				           <input id="h${tag.id}" type="hidden" name="${fieldName}" 
+				                    value="${object.tags.contains(tag) ? tag.id : ''}" />
+				        #{/list}
+				    </div>
+    			#{/crud.custom}
 		    #{/crud.form}
+		   </div>
 		    <p class="crudButtons">
 		        <input type="submit" name="_save" 
 		               value="&{'crud.save', type.modelName}" />

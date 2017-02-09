@@ -5,17 +5,14 @@ title=Título
 content=Conteúdo
 postedAt=Postado em
 author=Autor
-post=Posts relacionados
+post=Posts
 tags=Tags relacionadas
 name=Nome
 email=E-mail
 password=Senha
 fullname=Nome inteiro
 isAdmin=Usuário administrador
-PostsController=Post
-TagsController=Tags
-UsersController=Usuários
-CommentsController=Comentários
+
 
 secure.username=Your email:
 secure.password=Your password:

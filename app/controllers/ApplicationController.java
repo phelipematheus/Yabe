@@ -1,10 +1,11 @@
 package controllers;
 
+import java.io.IOException;
 import java.util.List;
 
 import models.PostBO;
 import play.Play;
-import play.cache.*;
+import play.cache.Cache;
 import play.data.validation.Required;
 import play.libs.Codec;
 import play.libs.Images;
@@ -14,8 +15,8 @@ import play.mvc.Controller;
 public class ApplicationController extends Controller {
 
     public static void index() {
-    	PostBO frontPost = PostBO.find("order by postedAt desc").first();
-    	List<PostBO> olderPosts = PostBO.find("order by postedAt desc").from(1).fetch(10);
+    	PostBO frontPost = PostBO.findPost();
+    	List<PostBO> olderPosts = PostBO.findPostList(1, 10);
         render(frontPost, olderPosts);
     }
 
@@ -55,6 +56,11 @@ public class ApplicationController extends Controller {
     	Images.Captcha captcha = Images.captcha();
     	String code = captcha.getText("#E4EAFD"); //essas letras em azul é a cor!
     	Cache.set(id, code, "10mn");
+    	try {
+			captcha.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
     	renderBinary(captcha);
     }
     

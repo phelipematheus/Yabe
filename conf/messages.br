@@ -1,0 +1,97 @@
+# You can specialize this file for each language.
+# For example, for French create a messages.fr file
+#
+
+#admin Page
+    title=Título
+    content=Conteudo
+    postedAt=Postado em
+    author=Autor
+    post=Post relacionado
+    tags=Tags set
+    name=Tags
+    email=Email
+    password=Password
+    fullname=Nome Completo
+    isAdmin=Usuário é admin
+    PostsController=Post
+    TagsController=Tags
+    UsersController=Usuários
+    CommentsController=Comentários
+    
+    admin.title= administração
+    admin.index.newPost= escrever novo post
+    admin.index.welcome= Bem-vindo(a) %s <span>você escreveu %s %s até agora</span>
+
+#Login Page
+    secure.username=Seu email:
+    secure.password=Seu password:
+    secure.signin=Logar agora
+    
+    My_posts = Meus posts
+    post = post
+    Post = Post
+    posts = posts
+    Posts = Posts
+    comment = comentário
+    Comment = Comentário
+    comments = comentários
+    Comments = Comentários
+    user = usuário
+    User = Usuário
+    users = usuários
+    Users = Usuários
+
+#crud
+  crud.title=Administração
+  crud.home=Home
+  crud.blank=Novo
+  crud.index.title=Choose the object to edit
+  crud.index.objectType=Object type
+  crud.index.action=
+  crud.index.add=Adicionar
+  crud.add=Adicionar &{%s}
+  crud.list.title=&{%s}
+  crud.list.size=%d &{%s}
+  crud.list.totalSize=%d total
+  crud.pagination.previous=« Anterior
+  crud.pagination.next=Proximo »
+  crud.pagination.last=Última »»
+  crud.pagination.first=«« Primeira
+  crud.show.title=Editar &{%s}
+  crud.save=Salvar
+  crud.saveAndContinue=Salvar e continuar editando
+  crud.cancel=Cancelar
+  crud.hasErrors=Por favor arrume os erros
+  crud.blank.title=Adicionar &{%s}
+  crud.saveAndAddAnother=Salvar e criar outro
+  crud.delete=Deletar &{%s}
+  crud.created=O &{%s} foi criado
+  crud.saved=O &{%s} foi salvo
+  crud.deleted=O &{%s} foi deletado
+  crud.delete.error=Não foi possível deletar o objeto
+  crud.search=Procurar
+  crud.none=(Nada)
+  crud.selectValue=(Por favor selecione um valor)
+
+  crud.help.required=Requerido.
+  crud.help.minlength=Tamanho mínimo é %d.
+  crud.help.maxlength=Tamanho máximo é %d.
+  crud.help.email=Endereço de email válido.
+  crud.help.dateformat=&{%s} formato.
+  crud.help.numeric=Numérico.
+  crud.help.min=Deve ser maior que %d.
+  crud.help.future=No futuro.
+  crud.help.past=Np passado.
+  crud.help.after=Depois %s.
+  crud.help.before=Antes %s.
+  crud.help.range=Entre %d and %d
+
+#Secure
+  secure.title=
+  secure.username=Usuário:
+  secure.password=Password:
+  secure.remember=Lembrar
+  secure.signin=Log in
+  secure.error=Opaaa, usuário ou password desconhecido.
+  secure.logout=Você saiu.

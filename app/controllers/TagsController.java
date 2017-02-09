@@ -1,8 +1,7 @@
 package controllers;
 
 import models.TagBO;
-import play.mvc.*;
-import play.*;
+import play.mvc.With;
 
 @Check("admin")
 @With(Secure.class)

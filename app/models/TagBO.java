@@ -4,10 +4,12 @@ import java.util.List;
 import java.util.Map;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 import play.data.validation.Required;
 import play.db.jpa.Model;
 
+@Table(name="tb_tag")
 @Entity
 public class TagBO extends Model implements Comparable<TagBO>{
 
@@ -40,4 +42,19 @@ public class TagBO extends Model implements Comparable<TagBO>{
 			    ).fetch();
 		return result;
 	}
+
+	
+	
+	
+//	Parte dos Getters and Setters
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
 }

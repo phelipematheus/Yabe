@@ -5,6 +5,7 @@ import java.util.List;
 import models.PostBO;
 import models.TagBO;
 import models.UserBO;
+import play.i18n.Lang;
 import play.mvc.Before;
 import play.mvc.Controller;
 import play.mvc.With;
@@ -15,14 +16,14 @@ public class AdminController extends Controller{
 	@Before
 	static void setConnectedUser(){
 		if(SecurityController.isConnected()){
-			UserBO user = UserBO.find("byEmail", SecurityController.connected()).first();
+			UserBO user = UserBO.findUser(SecurityController.connected());
 			renderArgs.put("user", user.fullname);
 		}
 	}
 	
 	public static void index(){
 		String user = SecurityController.connected();
-	    List<PostBO> posts = PostBO.find("author.email", user).fetch();
+	    List<PostBO> posts = PostBO.findPostListBtAuthor(user);
 	    render(posts);
 	}
 	
@@ -33,12 +34,16 @@ public class AdminController extends Controller{
 		    }
 		render();
 	}
+	public static void lang(String lang){
+		Lang.change(lang);
+		index();
+	}
 	
 	public static void save(Long id, String title, String content, String tags) {
 	    PostBO post;
 	    if(id == null) {
 	        // Create post
-	        UserBO author = UserBO.find("byEmail", SecurityController.connected()).first();
+	        UserBO author = UserBO.findUser(SecurityController.connected());
 	        post = new PostBO(author, title, content);
 	    } else {
 	        // Retrieve post
